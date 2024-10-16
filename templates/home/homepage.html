@@ -1,0 +1,263 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+
+<br><br><br><br>   
+<br><br><br><br> 
+
+{% block content %}
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: radial-gradient(circle, white, black);
+            color: #333;
+        }
+
+        header {
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+        
+        .intro img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .menu {
+            display: inline-flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 1px;
+            text-align: center;
+            
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit:cover;
+        }
+
+        .menu-item h3 {
+            margin: 10px 0;
+        }
+        
+
+        footer {
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+        }
+        
+        .slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+        .slideshow-container img {
+    width: 600px; 
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+            object-fit: scale-down;
+}
+
+.mySlides {
+    display: none;
+    position: relative;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 10s;
+}
+
+@keyframes fade {
+    from {opacity: 1} 
+    to {opacity: 1}
+}
+
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 3px 0 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .prev, .next {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+}
+
+    </style>
+    
+    
+    
+<body>
+
+<header>
+    <h1>Dessertistic</h1>
+</header>
+
+<div class="slideshow-container">
+    
+    <div class="mySlides fade">
+        <img src="{% static 'media/cozon.jpeg' %}" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+        <img src="{% static 'media/honey.jpeg' %}" style="width:100%">
+    </div>
+    
+    <div class="mySlides fade">
+        <img src="{% static 'media/jackd.jpeg' %}" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
+<br>
+
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span> 
+    <span class="dot" onclick="currentSlide(2)"></span> 
+    <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+
+<div class="container-menu">
+    
+    <section class="menu" id="meniu">
+        <h2>O parte din produsele pe care le gasiti la noi!</h2>
+        <div class="menu-item">
+            <img src="{% static 'media/turta-dulce.jpeg' %}" alt="Turta dulce">
+            <h3>Turta dulce</h3>
+            <p>Umpluta cu majun de prune, numai bune pentru o gustare dulce.</p>
+        </div>
+        <div class="menu-item">
+            <img src="{% static 'media/mini-eclere.jpeg' %}" alt="Mini-clere">
+            <h3>Mini-eclere</h3>
+            <p>Umplute cu cremă fină și glazurate cu ciocolată.</p>
+        </div>
+        <div class="menu-item">
+            <img src="{% static 'media/mini-tarte.jpeg' %}" alt="Mini-tarte cu fructe">
+            <h3>Mini-tarte cu Fructe</h3>
+            <p>Fructe proaspete pe un strat crocant de aluat.</p>
+        </div>
+    </section>
+    
+</div>
+
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 10000); 
+}
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+</script>
+
+<footer>
+    <p>&copy; 2024 Dessertistic. Toate drepturile rezervate.</p>
+</footer>
+
+</body>
+{% endblock %}

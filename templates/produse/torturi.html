@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Torturi {% endblock %}
+
+<br><br><br><br>   
+<br><br><br><br> 
+
+{% block content %}
+
+    <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+#produse {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#produse h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+.produs {
+    display: inline-block;
+    background-color: #fff;
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.produs:hover {
+    transform: translateY(-10px);
+}
+
+.produs img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.produs h3 {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.produs p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+    <body>
+
+    <section id="produse">
+        <h2>Torturi</h2>
+
+        <div class="produs">
+            <img src="{% static '/media/tort-diplomat.jpeg' %}" alt="Tort diplomat">
+            <h3>Tort diplomat</h3>
+            <p>Descriere scurtă pentru produsul 1. Este un produs de calitate, ideal pentru nevoile tale zilnice.</p>
+        </div>
+
+        <div class="produs">
+            <img src="{% static '/media/biscoff-cheesecake.jpeg' %}" alt="CheeseCake">
+            <h3>Cheesecake</h3>
+            <p>Descriere scurtă pentru produsul 2. Produs modern, eficient și de încredere.</p>
+        </div>
+
+        <div class="produs">
+            <img src="{% static '/media/tort-morcovi.jpeg' %}" alt="Tort de morcovi">
+            <h3>Tort de morcovi</h3>
+            <p>Descriere scurtă pentru produsul 3. O alegere excelentă pentru oricine caută performanță.</p>
+        </div>
+        
+        <div class="produs">
+            <img src="{% static '/media/tort-trio-cioco.jpeg' %}" alt="Tort trio chocolate">
+            <h3>Tort trio chocolate</h3>
+            <p>Descriere scurtă pentru produsul 3. O alegere excelentă pentru oricine caută performanță.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dessertistic. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+
+{% endblock %}

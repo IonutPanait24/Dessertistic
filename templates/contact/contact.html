@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block tittle %} Contact {% endblock %}
+
+{% block content %}
+
+    <style>
+    
+.contact {
+    display: block;
+    margin-top: 20px;
+}    
+    
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.contact {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.contact .info-item h3 {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.contact .info-item p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: #0056b3;
+}
+
+.contact .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contact .social-links li {
+    margin: 0 10px;
+}
+
+.contact .social-links a {
+    font-size: 20px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact .social-links a:hover {
+    color: #0056b3;
+}
+    </style>
+    
+    <body>
+    <section class="contact">
+        <div class="contact-container">
+            <h2>Contactează-ne</h2>
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:contact@exemplu.com">contact@exemplu.com</a></p>
+                </div>
+                <div class="info-item">
+                    <h3>Telefon</h3>
+                    <p><a href="tel:+40770791409">+40 770 791 409</a></p>
+                </div>
+                <div class="info-item">
+                    <h3>Urmărește-ne</h3>
+                    <ul class="social-links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
+
+{% endblock %}

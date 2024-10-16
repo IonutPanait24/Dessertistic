@@ -1,0 +1,62 @@
+<div class="gallery">
+    <img src="{% static '/media/choux-au-craquelin.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/jackd.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/joystick-ps4.jpg' %}" style="width:100%">
+    <img src="{% static '/media/medovik.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/mini-eclere.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/nurse.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/baby-gender.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/baby-gender1.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/biscoff-cheesecake.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/bounty-cheesecake.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/cheesecake-cu-capsuni.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/cozonac.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/cozonac1.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/faguri.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/mini-amandine.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/mini-tarte.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/mini-tarte.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/spiderman.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/spiderman1.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tiramisu-pahar.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tort-diplomat.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tort-morcovi.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tort-perso1.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tort-perso2.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tort-perso3.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tort-perso4.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tort-pescar.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/tort-trio-cioco.jpeg' %}" style="width:100%">
+    <img src="{% static '/media/turta-dulce.jpeg' %}" style="width:100%">
+  </div>
+
+
+
+
+  <style>
+div.gallery {
+  margin: 5px;
+  border: 1px solid silver;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+
+
+<a class="logo">
+            <img src="{% static '/media/Logo.png'%}" class="img-fluid rounded-circle" alt="Dessertistic" width="55" height="55">
+          </a>

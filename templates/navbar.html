@@ -1,0 +1,101 @@
+{% load static %}
+
+<style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:transparent;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 10;
+}
+
+
+.logo img {
+    height: 70px;
+    width: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li {
+    padding: 5px 0;
+}
+
+.nav-links a {
+    color: green;
+    font-size: 18px;
+    text-decoration: none;
+    font-family: 'Helvetica', sans-serif;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    color: #007BFF; 
+    border-bottom: 2px solid #007BFF; 
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #ffffff;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.4s ease-in-out;
+    }
+    
+}
+</style>
+<nav class="navbar navbar-expand-lg ">
+    <a class="logo">
+        <img src="{% static '/media/Logo.png'%}" class="img-fluid rounded-circle" alt="Dessertistic" width="55" height="55">
+    </a>
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="nav-links mx-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'despre-noi' %}">Despre noi</a>
+        </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Produse
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'torturi' %}">Torturi</a></li>
+            <li><a class="dropdown-item" href="{% url 'torturi-personalizate' %}">Torturi personalizate</a></li>
+            <li><a class="dropdown-item" href="{% url 'mini-prajituri' %}">Mini prajituri</a></li>
+            <li><a class="dropdown-item" href="{% url 'patiserie' %}">Patiserie</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'galerie-produse' %}">Galerie</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'contact-me' %}">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

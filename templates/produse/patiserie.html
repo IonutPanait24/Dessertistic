@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Mini prajituri {% endblock %}
+
+<br><br><br><br>   
+<br><br><br><br> 
+
+{% block content %}
+
+    <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+
+
+#produse {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#produse h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+.produs {
+    display: inline-block;
+    background-color: #fff;
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.produs:hover {
+    transform: translateY(-10px);
+}
+
+.produs img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.produs h3 {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.produs p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+    <body>
+
+    <section id="produse">
+        <h2>Mini prajituri</h2>
+
+        <div class="produs">
+            <img src="{% static '/media/cozonac.jpeg' %}" alt="Cozonac">
+            <h3>Cozonac</h3>
+            <p>Cozonac pufos cu crema de cacao si nuca.</p>
+        </div>
+
+        <div class="produs">
+            <img src="{% static '/media/turta-dulce.jpeg' %}" alt="Turta dulce">
+            <h3>Turta dulce</h3>
+            <p>Umpluta cu majun de prune, numai bune pentru o gustare dulce.</p>
+        </div>
+
+        <div class="produs">
+            <img src="{% static '/media/faguri.jpeg' %}" alt="Faguri">
+            <h3>Faguri</h3>
+            <p>Descriere</p>
+        </div>
+        
+        <div class="produs">
+            <img src="{% static '/media/choux-au-craquelin.jpeg' %}" alt="Choux-au-craquelin">
+            <h3>Choux-au-craquelin</h3>
+            <p>Descriere.</p>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dessertistic. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+
+{% endblock %}

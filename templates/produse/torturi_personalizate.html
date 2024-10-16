@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Torturi personalizate {% endblock %}
+
+<br><br><br><br>   
+<br><br><br><br> 
+
+{% block content %}
+
+   <style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+
+
+#produse {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#produse h2 {
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+.produs {
+    display: inline-block;
+    background-color: #fff;
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.produs:hover {
+    transform: translateY(-10px);
+}
+
+.produs img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.produs h3 {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.produs p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+    <body>
+
+    <section id="produse">
+        <h2>Torturi personalizate</h2>
+        <p>Tu ne spui ideea ta, iar noi o facem sa devina realitate sub forma unui tort delicios!</p>
+        <br><br><br>
+        
+        <h2>Iata cateva exemple:</h2>
+        
+        <div class="produs">
+            <img src="{% static '/media/tort-cifre.jpeg' %}" alt="Tort cifre">
+            <h3>Tort cifre</h3>
+            <p>Descriere</p>
+        </div>
+
+        <div class="produs">
+            <img src="{% static '/media/joystick-ps4.jpg' %}" alt="Tort joystick">
+            <h3>Tort joystick</h3>
+            <p>Tort joystick PS4</p>
+        </div>
+
+        <div class="produs">
+            <img src="{% static '/media/jackd.jpeg' %}" alt="Tort JackDaniel's">
+            <h3>Tort JackDaniel's</h3>
+            <p>Descriere</p>
+        </div>
+        
+        <div class="produs">
+            <img src="{% static '/media/spiderman1.jpeg' %}" alt="Tort Spider-Man">
+            <h3>Tort Spider-Man</h3>
+            <p>Descriere</p>
+        </div>
+        
+        <div class="produs">
+            <img src="{% static '/media/nurse.jpeg' %}" alt="Tort asistenta">
+            <h3>Tort pentru o asistenta</h3>
+            <p>Descriere</p>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Dessertistic. Toate drepturile rezervate.</p>
+    </footer>
+</body>
+
+{% endblock %}

@@ -1,0 +1,342 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block tittle %} Galerie {% endblock %}
+
+{% block content %}
+    <style>
+    
+   .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.gallery-item {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lightbox {
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  position: relative;
+  width: auto;
+  max-width: 40%;
+  max-height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-slide {
+  display: none;
+}
+
+.lightbox-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+    </style>
+<body>
+<h1 class="text-center ">Galeria Dessertistic</h1>
+    <br><br>
+<div class="gallery">
+<div class="gallery-item">
+    <img src="{% static '/media/baby-gender.jpeg' %}" alt="Baby gender reveal " onclick="openLightbox();currentSlide(1)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/biscoff-cheesecake.jpeg' %}" alt="Biscoff cheesecake" onclick="openLightbox();currentSlide(2)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/bounty-cheesecake.jpeg' %}" alt="Bounty cheesecake" onclick="openLightbox();currentSlide(3)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/cheesecake-cu-capsuni.jpeg' %}" alt="Cheesecake cu capsuni" onclick="openLightbox();currentSlide(4)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/choux-au-craquelin.jpeg' %}" alt="Choux au craquelin" onclick="openLightbox();currentSlide(5)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/faguri.jpeg' %}" alt="Faguri" onclick="openLightbox();currentSlide(6)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/jackd.jpeg' %}" alt="Tort JackDaniel's" onclick="openLightbox();currentSlide(7)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/joystick-ps4.jpg' %}" alt="Tort joystick PS4" onclick="openLightbox();currentSlide(8)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/medovik.jpeg' %}" alt="Medovik" onclick="openLightbox();currentSlide(9)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/mini-amandine.jpeg' %}" alt="Mini amandine" onclick="openLightbox();currentSlide(10)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/mini-eclere.jpeg' %}" alt="Mini eclere" onclick="openLightbox();currentSlide(11)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/mini-tarte.jpeg' %}" alt="Mini tarte" onclick="openLightbox();currentSlide(12)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/nurse.jpeg' %}" alt='Tort "asistenta"' onclick="openLightbox();currentSlide(13)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/spiderman.jpeg' %}" alt="Tort Spider-Man" onclick="openLightbox();currentSlide(14)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/spiderman1.jpeg' %}" alt="Tort Spider-Man" onclick="openLightbox();currentSlide(15)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tiramisu-pahar.jpeg' %}" alt="Tiramisu la pahar" onclick="openLightbox();currentSlide(16)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-cifra.jpeg' %}" alt="Tort cifra" onclick="openLightbox();currentSlide(17)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-cifre.jpeg' %}" alt="Tort cifre" onclick="openLightbox();currentSlide(18)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-diplomat.jpeg' %}" alt="Tort diplomat" onclick="openLightbox();currentSlide(19)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-morcovi.jpeg' %}" alt="Tort de morcovi" onclick="openLightbox();currentSlide(20)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-perso1.jpeg' %}" alt="Tort perso" onclick="openLightbox();currentSlide(21)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-perso2.jpeg' %}" alt="Tort perso" onclick="openLightbox();currentSlide(22)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-perso3.jpeg' %}" alt="Tort perso" onclick="openLightbox();currentSlide(23)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-perso4.jpeg' %}" alt="Tort perso" onclick="openLightbox();currentSlide(24)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-pescar.jpeg' %}" alt="Tortul pescarului" onclick="openLightbox();currentSlide(25)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/tort-trio-cioco.jpeg' %}" alt="Tort trio ciocolate" onclick="openLightbox();currentSlide(26)">
+</div>
+
+<div class="gallery-item">
+    <img src="{% static '/media/turta-dulce.jpeg' %}" alt="Turta dulce" onclick="openLightbox();currentSlide(27)">
+</div>
+</div>
+
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+    
+  <div class="lightbox-content">
+    <div class="lightbox-slide">
+      <img src="{% static 'media/baby-gender1.jpeg' %}" alt="Baby gender reveal">
+    </div>
+    <div class="lightbox-slide">
+      <img src="{% static 'media/biscoff-cheesecake.jpeg' %}" alt="Biscoff cheesecake">
+    </div>
+    <div class="lightbox-slide">
+      <img src="{% static 'media/blue.jpeg' %}" alt="Tort Blue">
+    </div>
+    <div class="lightbox-slide">
+      <img src="{% static 'media/bounty-cheesecake.jpeg' %}" alt="Bounty cheesecake">
+    </div>
+    <div class="lightbox-slide">
+      <img src="{% static 'media/cheesecake-cu-capsuni.jpeg' %}" alt="Cheesecake cu capsuni">
+    </div>  
+    <div class="lightbox-slide">
+      <img src="{% static 'media/choux-au-craquelin.jpeg' %}" alt="Choux-au-craquelin">
+    </div>  
+    <div class="lightbox-slide">
+      <img src="{% static 'media/cozonac.jpeg' %}" alt="Cozonac">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/faguri.jpeg' %}" alt="Faguri">
+    </div>
+    <div class="lightbox-slide">
+      <img src="{% static 'media/honey.jpeg' %}" alt="Tort honey">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/jack.jpeg' %}" alt="Tort JackDaniel's">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/joystick-ps4.jpg' %}" alt="Joystick PS4">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/medovik.jpeg' %}" alt="Medovik">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/mini-amandine.jpeg' %}" alt="Mini amandine">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/mini-eclere.jpeg' %}" alt="Mini eclere">
+    </div> 
+    <div class="lightbox-slide">
+      <img src="{% static 'media/mini-tarte.jpeg' %}" alt="Mini tarte">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/nurse.jpeg' %}" alt="Tort asistenta">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/spiderman.jpeg' %}" alt="Tort Spider-Man">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/spiderman1.jpeg' %}" alt="Tort Spider-Man">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tiramisu-pahar.jpeg' %}" alt="Tiramisu la pahar">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-cifra.jpeg' %}" alt="Tort cifra">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-cifre.jpeg' %}" alt="Tort cifre">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-diplomat.jpeg' %}" alt="Tort diplomat">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-morcovi.jpeg' %}" alt="Tort de morcovi">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-perso1.jpeg' %}" alt="Tort perso1">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-perso2.jpeg' %}" alt="Tort perso2">
+    </div>   
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-perso3.jpeg' %}" alt="Tort perso3">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-perso4.jpeg' %}" alt="Tort perso4">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-trio-cioco.jpeg' %}" alt="Tort trio chocolate">
+    </div> 
+    <div class="lightbox-slide">
+      <img src="{% static 'media/tort-pescar.jpeg' %}" alt="Tort pescar">
+    </div>    
+    <div class="lightbox-slide">
+      <img src="{% static 'media/turta-dulce.jpeg' %}" alt="Turta dulce">
+    </div>   
+      
+      <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+      <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      
+  </div>
+</div>   
+</body>
+    
+    <script>
+  let slideIndex = 1;
+  
+function openLightbox() {
+  document.getElementById('lightbox').style.display = 'flex';
+}
+  
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+  
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+  
+function changeSlide(n) {
+  showSlides(slideIndex += n);
+}
+  
+function showSlides(n) {
+  let slides = document.getElementsByClassName("lightbox-slide");
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+    
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+    
+  slides[slideIndex - 1].style.display = "block";
+}
+  
+document.addEventListener("DOMContentLoaded", function() {
+  closeLightbox(); 
+});
+</script>
+{% endblock %}

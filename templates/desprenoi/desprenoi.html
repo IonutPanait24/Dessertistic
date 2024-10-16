@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block tittle %} Despre noi {% endblock %}
+{% block content %}
+ 
+    <style>
+    .despre-noi {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0 auto;
+}
+
+.despre-noi h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #222;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.despre-noi section {
+    max-width: 800px; 
+    margin: 0 auto;
+    background-color: white; 
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+    text-align: left;
+}
+
+.despre-noi section p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555; 
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.story-container {
+    margin-top: 20px;
+}
+
+.story-container .card-text {
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.story-container p {
+    color: #555;
+}
+
+.despre-noi section p:last-child {
+    margin-bottom: 0;
+}
+
+    </style>
+    
+     <section class="despre-noi">
+        <div class="story-container">
+
+        <h1 class="text-center">Povestea Dessertistic</h1>
+        <br><br><br>
+                <p class="card-text">Cand o idee se naste din pasiune, te indragostesti de ea inainte sa se intample.
+Sa va spunem secretul? Adaugam o masura de inspiratie, dupa preferinte, combinam cu jumatate de kilogram de pasiune, asezonam cu o doza de multa bucurie si asteptam sa descoperim magia rezultatului.</p>
+                <br>
+                <p class="card-text">Fiecare prajitura este o poveste, tesuta cu rabdare si maiestrie, din cele mai pure si naturale ingrediente. Ne dorim ca fiecare bucata sa fie o explozie de gusturi autentice, o calatorie senzoriala care sa te transporte in lumea copilariei, unde fiecare aroma era o descoperire.</p>
+                <br>
+                <p class="card-text">In spatele fiecarei retete se afla multa grija si dragoste, la fel cum un artist isi modeleaza capodopera. Fiecare detaliu conteaza, de la textura cremei, la parfumul discret al fructelor proaspete. Nu urmarim doar perfectiunea estetica, ci si acea emotie subtila pe care o simti atunci cand savurezi ceva cu adevarat special.</p>
+                <br>
+                <p class="card-text">Deserturile noastre nu sunt doar pentru a satisface pofta de dulce, ci sunt create pentru a celebra momentele importante ale vietii, cu delicatete si bucurie. La noi, fiecare prajitura spune o poveste - una despre grija, pasiune si dorinta de a aduce fericire prin simplitatea ingredientelor naturale si farmecul gustului desavarsit.</p>
+            </div>
+    </div>
+     </section>
+
+
+{% endblock %}
